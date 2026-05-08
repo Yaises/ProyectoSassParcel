@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.hero {
+  background-color: color(dark);
+  color: color(accent);
+  @include section-wrapper(10rem);
+
+  &__inner {
+    @include inner-container(80rem);
+    @include flexposition(column, center, center);
+    text-align: center;
+    gap: 2.4rem;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: size(xl);
+    color: color(accent);
+    line-height: 1.15;
+
+    span {
+      color: color(secondary); // palabra destacada en naranja para mi título
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: size(sm);
+    color: color(muted);
+    max-width: 52rem;
+    line-height: 1.7;
+  }
+
+  &__actions {
+    @include flexposition(row, center, center);
+    gap: 1.6rem;
+    flex-wrap: wrap;
+  }
+}

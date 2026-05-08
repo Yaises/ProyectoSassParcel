@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.header {
+  background-color: color(dark);
+  padding: 0 2rem;
+  position: sticky;   // Con esto se queda fijo al hacer scroll
+  top: 0;
+  z-index: 100;
+
+  &__inner {
+    @include inner-container;
+    @include flexposition(row, space-between, center);
+    height: 7rem;
+  }
+
+  &__logo {
+    font-family: $font-heading;
+    font-size: size(md);
+    color: color(accent);
+    font-weight: weight("bold");
+    letter-spacing: 0.1rem;
+
+    span {
+      color: color(secondary); // resalta una palabra del nombre
+    }
+  }
+}

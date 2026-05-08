@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+// ── Card base: usada en características y reseñas ─
+.card {
+  background-color: #fff;
+  border-radius: $border-radius;
+  padding: 3rem 2.4rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  // Icono o imagen dentro de la card
+  &__icon {
+    font-size: 3.2rem;   // emoji
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: size(sm);
+    color: color(primary);
+  }
+
+  &__text {
+    font-family: $font-body;
+    font-size: size(xs);
+    color: color(text);
+    line-height: 1.7;
+  }
+
+  // ── Variante: testimonio ──
+  &--testimonial {
+    background-color: color(accent);
+    border-left: 0.4rem solid color(secondary);
+
+    blockquote {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(text);
+      font-style: italic;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    cite {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(muted);
+      font-weight: weight("bold");
+      font-style: normal;
+      margin-top: 1rem;
+      display: block;
+    }
+  }
+}

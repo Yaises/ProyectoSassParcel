@@ -1,0 +1,107 @@
+////
+//// Proyecto: Cafetería Landing Page
+//// @author Jesus
+////
+
+@use "sass:map";
+@use "sass:list";
+
+// ─────────────
+// TIPOGRAFÍA
+// ─────────────
+
+/// Fuente para títulos y encabezados
+/// @group Tipografía
+/// @type String
+$font-heading: 'Playfair Display', serif;
+
+/// Fuente para textos de párrafo y UI
+/// @group Tipografía
+/// @type String
+$font-body: 'Lato', sans-serif;
+
+/// Escala de tamaños de fuente
+/// @group Tipografía
+/// @type Map
+$font-sizes: (
+  xxl: 6.4rem,
+  xl:  4.8rem,
+  lg:  3.6rem,
+  md:  2.4rem,
+  sm:  1.8rem,
+  xs:  1.4rem
+);
+
+/// Devuelve un tamaño de fuente del mapa $font-sizes
+/// @group Tipografía
+/// @param {String} $key - Clave del tamaño (xs, sm, md, lg, xl, xxl)
+/// @return {Number} Valor en rem
+@function size($key) {
+  @if map.has-key($font-sizes, $key) {
+    @return map.get($font-sizes, $key);
+  } @else {
+    @error "El tamaño '#{$key}' no existe en $font-sizes.";
+  }
+}
+
+/// Pesos de fuente disponibles
+/// @group Tipografía
+/// @type Map
+$font-weights: (
+  "light":   300,
+  "regular": 400,
+  "bold":    700
+);
+
+/// Devuelve el peso numérico de una fuente
+/// @group Tipografía
+/// @param {String} $w - Nombre del peso (light, regular, bold)
+/// @return {Number} Valor numérico
+@function weight($w) {
+  @return map.get($font-weights, $w);
+}
+
+
+// ──────────
+// COLORES
+// ──────────
+
+/// Paleta de colores del proyecto
+/// @group Colores
+/// @type Map
+$colors: (
+  primary:    #3b1f0a,   // marrón oscuro
+  secondary:  #c8813a,   // naranja
+  accent:     #f5e6d3,   // crema
+  dark:       #1a1009,   // casi negro
+  light:      #fdf8f4,   // blanco cálido
+  text:       #4a3728,   // marrón medio
+  muted:      #9e8070    // gris tirando a marrón
+);
+
+/// Devuelve un color del mapa $colors
+/// @group Colores
+/// @param {String} $name - Nombre del color
+/// @return {Color} Valor hexadecimal
+@function color($name) {
+  @if map.has-key($colors, $name) {
+    @return map.get($colors, $name);
+  } @else {
+    @error "El color '#{$name}' no existe en $colors.";
+  }
+}
+
+
+// ──────────────────────
+// ESPACIADO Y BORDES
+// ──────────────────────
+
+/// Radio de borde estándar para tarjetas y elementos UI
+/// @group Base
+/// @type Number
+$border-radius: 0.8rem;
+
+/// Espaciado base entre elementos de grid o flex
+/// @group Base
+/// @type Number
+$gap: 2rem;

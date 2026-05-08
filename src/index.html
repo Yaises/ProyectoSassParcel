@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Raíz — Especialidad y tradición</title>
+  <link rel="stylesheet" href="./scss/styles.scss">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+
+      <a href="#" class="header__logo">Café <span>Raíz</span></a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#caracteristicas" class="nav__link">Por qué nosotros</a></li>
+          <li><a href="#menu"            class="nav__link">Menú</a></li>
+          <li><a href="#testimonios"     class="nav__link">Opiniones</a></li>
+          <li><a href="#contacto"        class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="badge badge--primary">Abierto todos los días</span>
+
+      <h1 class="hero__title">
+        El café que <span>despierta</span><br>tu mañana
+      </h1>
+
+      <p class="hero__subtitle">
+        Granos de origen seleccionados, tostados en pequeños lotes.
+        Ven a descubrir el sabor real del café de especialidad.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#menu"     class="btn">Ver el menú</a>
+        <a href="#contacto" class="btn btn--outline">Reservar mesa</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="features" id="caracteristicas">
+    <div class="features__inner">
+
+      <h2 class="section-title">¿Por qué elegir Café Raíz?</h2>
+      <p class="section-subtitle">Tres razones que marcan la diferencia cada día</p>
+
+      <div class="features__grid">
+
+        <article class="card">
+          <span class="card__icon">☕</span>
+          <h3 class="card__title">Origen único</h3>
+          <p class="card__text">
+            Trabajamos directamente con productores de Colombia, Etiopía y Guatemala.
+            Sin intermediarios, con trazabilidad total.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="card__icon">🔥</span>
+          <h3 class="card__title">Tostado artesanal</h3>
+          <p class="card__text">
+            Tostamos en pequeños lotes cada semana para garantizar
+            la máxima frescura en cada taza que servimos.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="card__icon">🌿</span>
+          <h3 class="card__title">Sostenibilidad</h3>
+          <p class="card__text">
+            Packaging 100% compostable, sin plásticos de un solo uso
+            y compensación de huella de carbono en todos nuestros envíos.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="menu" id="menu">
+    <div class="menu__inner">
+
+      <h2 class="section-title">Nuestra carta</h2>
+      <p class="section-subtitle">Selección de esta temporada</p>
+
+      <div class="menu__grid">
+
+        <article class="menu__item">
+          <img
+            class="menu__img"
+            src="./assets/espresodeorigen.jpg"  
+            alt="Espresso de origen"
+          >
+          <div class="menu__body">
+            <span class="badge badge--primary">Popular</span>
+            <h3 class="menu__name">Espresso de origen</h3>
+            <p class="menu__desc">Blend de Colombia y Etiopía. Notas de frutos rojos y chocolate negro.</p>
+            <p class="menu__price">2,50 €</p>
+          </div>
+        </article>
+
+        <article class="menu__item">
+          <img
+            class="menu__img"
+            src="./assets/flatwhite.jpg"
+            alt="Flat White"
+          >
+          <div class="menu__body">
+            <h3 class="menu__name">Flat White</h3>
+            <p class="menu__desc">Doble ristretto con leche texturizada. Suave, intenso y equilibrado.</p>
+            <p class="menu__price">3,20 €</p>
+          </div>
+        </article>
+
+        <article class="menu__item">
+          <img
+            class="menu__img"
+            src="./assets/coldbrew.jpg"
+            alt="Cold Brew de verano"
+          >
+          <div class="menu__body">
+            <span class="badge badge--light">Temporada</span>
+            <h3 class="menu__name">Cold Brew de verano</h3>
+            <p class="menu__desc">Infusión en frío 18 horas. Servido con naranja y jengibre.</p>
+            <p class="menu__price">4,00 €</p>
+          </div>
+        </article>
+
+        <article class="menu__item">
+          <img
+            class="menu__img"
+            src="./assets/matchalatte.jpg"
+            alt="Matcha Latte"
+          >
+          <div class="menu__body">
+            <h3 class="menu__name">Matcha Latte</h3>
+            <p class="menu__desc">Matcha ceremonial japonés con leche de avena.</p>
+            <p class="menu__price">3,80 €</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="testimonials" id="testimonios">
+    <div class="testimonials__inner">
+
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-subtitle">Opiniones reales de personas reales</p>
+
+      <div class="testimonials__grid">
+
+        <article class="card card--testimonial">
+          <blockquote>
+            "El mejor espresso que he tomado fuera de Italia. Se nota que cuidan cada detalle
+            desde el grano hasta la taza."
+          </blockquote>
+          <cite>— Laura M., Madrid</cite>
+        </article>
+
+        <article class="card card--testimonial">
+          <blockquote>
+            "Me conquistó el cold brew. Nunca había probado algo tan suave y con tanto
+            cuerpo a la vez. Ya soy clienta fija."
+          </blockquote>
+          <cite>— Sara G., Barcelona</cite>
+        </article>
+
+        <article class="card card--testimonial">
+          <blockquote>
+            "El ambiente es tranquilo, el personal es amable y el café es excepcional.
+            El sitio perfecto para trabajar por las mañanas."
+          </blockquote>
+          <cite>— Marcos T., Valencia</cite>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="contact" id="contacto">
+    <div class="contact__inner">
+
+      <h2 class="contact__title">¿Te avisamos de novedades?</h2>
+      <p class="contact__subtitle">
+        Suscríbete y recibe primero las nuevas cartas de temporada, eventos y descuentos exclusivos.
+      </p>
+
+      <form class="contact__form">
+        <input
+          type="email"
+          id="newsletter-input"
+          class="contact__input"
+          placeholder="tu@email.com"
+        >
+        <button type="submit" class="btn" id="newsletter-btn">Suscribirme</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <h3>Café <span>Raíz</span></h3>
+        <p>
+          Cafetería de especialidad en el corazón de la ciudad.<br>
+          Lunes a viernes de 7:30 a 21:00 · Fines de semana de 9:00 a 14:00.
+        </p>
+      </div>
+
+      <div class="footer__links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#caracteristicas">Por qué nosotros</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#testimonios">Opiniones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__social">
+        <h4>Redes sociales</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Café Raíz — Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>

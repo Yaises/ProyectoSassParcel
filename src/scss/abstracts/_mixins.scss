@@ -1,0 +1,123 @@
+////
+//// Mixins del proyecto
+////
+
+@use "variables" as *;
+@use "sass:map";
+
+// ──────────────────────
+// MIXINS DE LA CLASE
+// ──────────────────────
+
+/// Elimina márgenes, paddings y viñetas de una lista
+/// @group Base
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/// Configura un elemento flex con dirección, justificado y alineado
+/// @group Layout
+/// @param {String} $direction     [row]    - flex-direction
+/// @param {String} $justify       [center] - justify-content
+/// @param {String} $align         [center] - align-items
+/// @example scss
+///   .header { @include flexposition(row, space-between, center); }
+@mixin flexposition($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/// Grid con columnas auto-ajustables según el espacio disponible
+/// @group Layout
+/// @param {Number} $min-size [18rem] - Ancho mínimo de cada columna
+/// @param {Number} $gap      [2rem]  - Espacio entre columnas y filas
+/// @example scss
+///   .features { @include grid-flexible(24rem, 2rem); }
+@mixin grid-flexible($min-size: 18rem, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-size, 1fr));
+  gap: $gap;
+}
+
+
+// ────────────────
+// MEDIA QUERIES
+// ────────────────
+
+/// Puntos de ruptura del diseño responsive
+/// @group Layout
+/// @type Map
+$breakpoints: (
+  sm:  57.6rem,
+  md:  76.8rem,
+  lg:  99.2rem,
+  xl:  120rem
+);
+
+/// Aplica estilos a partir de un ancho mínimo (mobile-first), los estilos base son para movil, luego se adapta a otras pantallas
+/// @group Layout
+/// @param {String} $bp - Nombre del breakpoint (sm, md, lg, xl)
+/// @example scss
+///   .nav { display: none; @include media(md) { display: flex; } }
+@mixin media($bp) {
+  $size: map.get($breakpoints, $bp);
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+
+// ──────────────────
+// MIXINS PROPIOS
+// ──────────────────
+
+/// Estilo base para botones: relleno, tipografía y transición
+/// @group Componentes
+/// @param {Color} $bg    [color(secondary)] - Color de fondo del botón
+/// @param {Color} $color [#fff]             - Color del texto
+/// @example scss
+///   .btn--primary { @include button-base(color(secondary), #fff); }
+@mixin button-base($bg: color(secondary), $color: #fff) {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background-color: $bg;
+  color: $color;
+  font-family: $font-body;
+  font-size: size(xs);
+  font-weight: weight("bold");
+  text-decoration: none;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    opacity: 0.88;
+    transform: translateY(-0.2rem);
+  }
+}
+
+/// Sección con padding vertical uniforme y contenido centrado
+/// @group Layout
+/// @param {Number} $padding-y [8rem] - Espacio arriba y abajo
+/// @example scss
+///   .section-features { @include section-wrapper(8rem); }
+@mixin section-wrapper($padding-y: 8rem) {
+  padding: $padding-y 2rem;
+  width: 100%;
+}
+
+/// Contenedor de ancho máximo centrado horizontalmente
+/// @group Layout
+/// @param {Number} $max [120rem] - Ancho máximo del contenedor
+/// @example scss
+///   .hero__inner { @include inner-container(110rem); }
+@mixin inner-container($max: 120rem) {
+  width: 90%;
+  max-width: $max;
+  margin: 0 auto;
+}

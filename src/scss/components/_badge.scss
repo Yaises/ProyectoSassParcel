@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+// ── Badge: etiqueta pequeña para destacar texto ──
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  font-family: $font-body;
+  font-size: 1.2rem;
+  font-weight: weight("bold");
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+
+  &--primary {
+    background-color: color(secondary);
+    color: #fff;
+  }
+
+  &--light {
+    background-color: color(accent);
+    color: color(primary);
+  }
+}

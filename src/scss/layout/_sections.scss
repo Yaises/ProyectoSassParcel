@@ -1,0 +1,159 @@
+@use '../abstracts' as *;
+
+// ── Título compartido de sección ──
+.section-title {
+  font-family: $font-heading;
+  font-size: size(lg);
+  color: color(primary);
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  font-family: $font-body;
+  font-size: size(sm);
+  color: color(muted);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+// ── Sección Características ──
+.features {
+  background-color: color(light);
+  @include section-wrapper;
+
+  &__inner {
+    @include inner-container;
+  }
+
+  &__grid {
+    @include grid-flexible(24rem, 2.4rem);
+  }
+}
+
+// ── Sección Menú / Productos ──
+.menu {
+  background-color: color(accent);
+  @include section-wrapper;
+
+  &__inner {
+    @include inner-container;
+  }
+
+  &__grid {
+    @include grid-flexible(28rem, 2.4rem);
+  }
+
+  &__item {
+    background-color: #fff;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.07);
+    transition: transform 0.2s ease;
+
+    &:hover { transform: translateY(-0.4rem); }
+  }
+
+  &__img {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: size(sm);
+    color: color(primary);
+  }
+
+  &__desc {
+    font-family: $font-body;
+    font-size: size(xs);
+    color: color(text);
+  }
+
+  &__price {
+    font-family: $font-body;
+    font-size: size(sm);
+    color: color(secondary);
+    font-weight: weight("bold");
+  }
+}
+
+// ── Sección Testimonios ──
+.testimonials {
+  background-color: color(light);
+  @include section-wrapper;
+
+  &__inner {
+    @include inner-container;
+  }
+
+  &__grid {
+    @include grid-flexible(28rem, 2.4rem);
+  }
+}
+
+// ── Sección Contacto / Newsletter (Optimizado sin JS) ──
+.contact {
+  background-color: color(primary);
+  @include section-wrapper;
+  text-align: center;
+
+  &__inner {
+    @include inner-container(60rem);
+    @include flexposition(column, center, center);
+    gap: 2.4rem;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: size(lg);
+    color: color(accent);
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: size(sm);
+    color: color(muted);
+  }
+
+  &__form {
+    @include flexposition(row, center, center);
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 24rem;
+    padding: 1.2rem 1.8rem;
+    border: 0.2rem solid transparent;
+    border-radius: $border-radius;
+    font-family: $font-body;
+    font-size: size(xs);
+    color: color(text);
+    background-color: color(accent);
+    transition: all 0.3s ease;
+
+    &::placeholder { color: color(muted); }
+    &:focus { outline: none; border-color: color(secondary); }
+    
+    //  El :not activa el estilo cuando el placeholder ya no es visible
+    &:invalid:not(:placeholder-shown) {
+      border-color: #e05252; // Rojo si el email es incorrecto
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-color: #4caf50; // Verde si el email es correcto
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.nav {
+
+  // En móvil ocultamos la nav
+  display: none;
+
+  @include media(md) {
+    display: block;
+  }
+
+  &__list {
+    @include reset-list;
+    @include flexposition(row, center, center);
+    gap: 3.2rem;
+  }
+
+  &__link {
+    font-family: $font-body;
+    font-size: size(xs);
+    color: color(accent);
+    text-decoration: none;
+    font-weight: weight("regular");
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: color(secondary);
+    }
+  }
+}

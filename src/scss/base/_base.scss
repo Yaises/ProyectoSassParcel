@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: $font-body;
+  font-size: size(sm);
+  color: color(text);
+  background-color: color(light);
+  line-height: 1.6;
+}
+
+// Títulos: usan la fuente de display
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  color: color(primary);
+  line-height: 1.2;
+}
+
+h1 { font-size: size(xl); }
+h2 { font-size: size(lg); }
+h3 { font-size: size(md); }
+
+// Imágenes siempre responsive
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Links base
+a {
+  color: color(secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover { color: color(primary); }
+}

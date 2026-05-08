@@ -1,0 +1,104 @@
+@use '../abstracts' as *;
+
+.footer {
+  background-color: color(dark);
+  color: color(muted);
+  @include section-wrapper(6rem);
+
+  &__inner {
+    @include inner-container;
+    @include grid-flexible(20rem, 4rem);
+    align-items: start;
+    padding-bottom: 4rem;
+    border-bottom: 0.1rem solid rgba(255,255,255,0.08);
+  }
+
+  // Columna izquierda: nombre y descripción
+  &__brand {
+
+    h3 {
+      font-family: $font-heading;
+      font-size: size(md);
+      color: color(accent);
+      margin-bottom: 1rem;
+
+      span { color: color(secondary); }
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(muted);
+      line-height: 1.7;
+    }
+  }
+
+  // Columna central: enlaces de navegación
+  &__links {
+
+    h4 {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(accent);
+      font-weight: weight("bold");
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    ul { @include reset-list; }
+
+    li { margin-bottom: 0.8rem; }
+
+    a {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover { color: color(secondary); }
+    }
+  }
+
+  // Columna derecha: redes sociales
+  &__social {
+
+    h4 {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(accent);
+      font-weight: weight("bold");
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    ul {
+      @include reset-list;
+      @include flexposition(row, flex-start, center);
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    a {
+      font-family: $font-body;
+      font-size: size(xs);
+      color: color(muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover { color: color(secondary); }
+    }
+  }
+
+  // Barra inferior: copyright
+  &__bottom {
+    @include inner-container;
+    padding-top: 2.4rem;
+    text-align: center;
+    font-family: $font-body;
+    font-size: 1.2rem;
+    color: color(muted);
+  }
+}

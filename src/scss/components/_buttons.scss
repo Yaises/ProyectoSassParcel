@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+@use 'sass:color';
+
+// ── Botón principal (naranja cálido) ──────────────────
+.btn {
+  @include button-base;  // usamos nuestro mixin propio
+
+  // Variante outline: borde visible, fondo transparente
+  &--outline {
+    background-color: transparent;
+    border: 0.2rem solid color(secondary);
+    color: color(secondary);
+    padding: 1rem 2.6rem;
+    font-family: $font-body;
+    font-size: size(xs);
+    font-weight: weight("bold");
+    border-radius: $border-radius;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: color(secondary);
+      color: #fff;
+    }
+  }
+}

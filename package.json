@@ -1,0 +1,16 @@
+{
+  "name": "cafeteria-landing",
+  "version": "1.0.0",
+  "description": "Landing page de cafetería — Proyecto Final Sass + Parcel",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "sassdoc": "sassdoc src/scss -d docs"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "parcel": "^2.12.0",
+    "sass": "^1.77.0",
+    "sassdoc": "^2.7.4"
+  }
+}
