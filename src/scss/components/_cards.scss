@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-// ── Card base: usada en características y reseñas ─
+//  Card base: usada en características y reseñas
 .card {
   background-color: #fff;
   border-radius: $border-radius;
@@ -12,7 +12,7 @@
 
   // Icono o imagen dentro de la card
   &__icon {
-    font-size: 3.2rem;   // emoji
+    font-size: 3.2rem;
   }
 
   &__title {
@@ -28,7 +28,7 @@
     line-height: 1.7;
   }
 
-  // ── Variante: testimonio ──
+  //  Variante: testimonio
   &--testimonial {
     background-color: color(accent);
     border-left: 0.4rem solid color(secondary);
